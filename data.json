@@ -1,0 +1,29 @@
+[
+  {
+    "model": "website.product",
+    "pk": 1,
+    "fields": {
+      "name": "Laptop",
+      "price": 50000,
+      "description": "A powerful gaming laptop"
+    }
+  },
+  {
+    "model": "website.product",
+    "pk": 2,
+    "fields": {
+      "name": "Smartphone",
+      "price": 20000,
+      "description": "Latest smartphone with high-end features"
+    }
+  },
+  {
+    "model": "website.product",
+    "pk": 3,
+    "fields": {
+      "name": "Headphones",
+      "price": 3000,
+      "description": "Noise-cancelling headphones"
+    }
+  }
+]

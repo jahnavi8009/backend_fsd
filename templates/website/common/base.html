@@ -1,0 +1,13 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <title>{% block title %}Ecommerce{% endblock %}</title>
+    {% include 'website/common/headers.html' %}
+</head>
+<body>
+    {% block main_content %}
+    {% endblock %}
+    
+    {% include 'website/common/scripting.html' %}
+</body>
+</html>

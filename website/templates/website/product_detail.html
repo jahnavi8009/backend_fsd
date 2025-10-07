@@ -1,0 +1,41 @@
+{% extends "website/base.html" %}
+{% block content %}
+<style>
+    .product-detail {
+        max-width: 600px;
+        margin: 30px auto;
+        padding: 20px;
+        background: #fff;
+        border-radius: 8px;
+        box-shadow: 0 4px 12px rgba(0,0,0,0.1);
+    }
+    .product-detail h2 {
+        color: #333;
+        margin-bottom: 10px;
+    }
+    .product-detail p {
+        color: #555;
+        line-height: 1.5;
+    }
+    .product-detail a {
+        display: inline-block;
+        margin-top: 15px;
+        padding: 8px 15px;
+        background-color: #007BFF;
+        color: #fff;
+        text-decoration: none;
+        border-radius: 5px;
+    }
+    .product-detail a:hover {
+        background-color: #0056b3;
+    }
+</style>
+
+<div class="product-detail">
+    <h2>{{ product.name }}</h2>
+    <p>{{ product.description }}</p>
+    <p>Price: ${{ product.price }}</p>
+    <a href="{% url 'add_to_cart' product.pk %}">Add to Cart</a> | 
+    <a href="{% url 'product_list' %}">Back to List</a>
+</div>
+{% endblock %}

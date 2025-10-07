@@ -1,0 +1,55 @@
+{% extends "website/base.html" %}
+{% block content %}
+<style>
+    .product-form {
+        max-width: 500px;
+        margin: 30px auto;
+        padding: 20px;
+        background: #fff;
+        border-radius: 8px;
+        box-shadow: 0 4px 12px rgba(0,0,0,0.1);
+    }
+    .product-form h2 {
+        color: #333;
+        margin-bottom: 15px;
+        text-align: center;
+    }
+    .product-form form p {
+        margin-bottom: 15px;
+    }
+    .product-form button {
+        display: block;
+        width: 100%;
+        padding: 10px;
+        background-color: #28a745;
+        color: #fff;
+        border: none;
+        border-radius: 5px;
+        font-size: 16px;
+        cursor: pointer;
+    }
+    .product-form button:hover {
+        background-color: #218838;
+    }
+    .product-form a {
+        display: block;
+        margin-top: 10px;
+        text-align: center;
+        color: #007BFF;
+        text-decoration: none;
+    }
+    .product-form a:hover {
+        text-decoration: underline;
+    }
+</style>
+
+<div class="product-form">
+    <h2>{% if object %}Edit{% else %}Add{% endif %} Product</h2>
+    <form method="post">
+        {% csrf_token %}
+        {{ form.as_p }}
+        <button type="submit">Save</button>
+    </form>
+    <a href="{% url 'product_list' %}">Back to List</a>
+</div>
+{% endblock %}

@@ -1,0 +1,76 @@
+{% extends "website/base.html" %}
+{% block content %}
+<style>
+    .cart-table {
+        width: 100%;
+        margin-top: 20px;
+        border-collapse: collapse;
+        background: #fff;
+        border-radius: 8px;
+        overflow: hidden;
+        box-shadow: 0 4px 12px rgba(0,0,0,0.1);
+    }
+    .cart-table th, .cart-table td {
+        padding: 12px 15px;
+        text-align: center;
+        border-bottom: 1px solid #ddd;
+    }
+    .cart-table th {
+        background-color: #007BFF;
+        color: #fff;
+    }
+    .cart-table tr:last-child td {
+        font-weight: bold;
+    }
+    .cart-table a {
+        color: #dc3545;
+        text-decoration: none;
+    }
+    .cart-table a:hover {
+        text-decoration: underline;
+    }
+    .continue-shopping {
+        display: inline-block;
+        margin-top: 15px;
+        padding: 8px 15px;
+        background-color: #28a745;
+        color: #fff;
+        border-radius: 5px;
+        text-decoration: none;
+    }
+    .continue-shopping:hover {
+        background-color: #218838;
+    }
+</style>
+
+<h2>Your Cart</h2>
+{% if items %}
+<table class="cart-table">
+  <tr>
+    <th>Product</th>
+    <th>Price</th>
+    <th>Quantity</th>
+    <th>Subtotal</th>
+    <th>Actions</th>
+  </tr>
+  {% for item in items %}
+  <tr>
+    <td>{{ item.product.name }}</td>
+    <td>${{ item.product.price|floatformat:2 }}</td>
+    <td>{{ item.quantity }}</td>
+    <td>${{ item.subtotal|floatformat:2 }}</td>
+    <td>
+      <a href="{% url 'remove_from_cart' item.product.pk %}">Remove</a>
+    </td>
+  </tr>
+  {% endfor %}
+  <tr>
+    <td colspan="3"><strong>Total:</strong></td>
+    <td colspan="2">${{ total_price|floatformat:2 }}</td>
+  </tr>
+</table>
+{% else %}
+<p>Your cart is empty.</p>
+{% endif %}
+<a class="continue-shopping" href="{% url 'product_list' %}">Continue Shopping</a>
+{% endblock %}

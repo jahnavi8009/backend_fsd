@@ -1,0 +1,20 @@
+[
+  {
+    "model": "website.product",
+    "pk": 1,
+    "fields": {
+      "name": "Bag",
+      "description": "A bag with two partitions",
+      "price": 350
+    }
+  },
+  {
+    "model": "website.product",
+    "pk": 2,
+    "fields": {
+      "name": "Pen",
+      "description": "A ball point pen",
+      "price": 20
+    }
+  }
+]
