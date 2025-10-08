@@ -6,7 +6,7 @@ BASE_DIR = Path(__file__).resolve().parent.parent
 # SECURITY
 SECRET_KEY = "django-insecure-#ycx#-av_9io#62h8kjpbbac8%t%k_sllt8xx2p=u0nnmne&ot"
 DEBUG = True
-ALLOWED_HOSTS = ["fsdjango.onrender.com", "fsd-python-backend.onrender.com","sfsd.onrender.com"]
+ALLOWED_HOSTS = ["127.0.0.1", "localhost", "fsdjango.onrender.com", "fsd-python-backend.onrender.com", "sfsd.onrender.com"]
 AUTH_USER_MODEL = 'website.AuthUser'
 
 # Application definition
